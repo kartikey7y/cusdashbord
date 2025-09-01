@@ -1,12 +1,8 @@
 import { URLS } from '@/constants/urls';
+import { WeatherData } from '@/types';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-interface WeatherData {
-  temperature: number;
-  condition: string;
-  location: string;
-}
 
 export function useWeather() {
   const [data, setData] = useState<WeatherData | null>(null);

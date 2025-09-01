@@ -1,12 +1,12 @@
 export type WidgetType = 'weather' | 'tasks' | 'news';
 
-export interface Widget {
+export type Widget = {
   id: string;
   type: WidgetType;
   title: string;
 }
 
-export interface DashboardState {
+export type DashboardState = {
   widgets: Widget[];
 }
 
@@ -21,4 +21,10 @@ export type NewsArticle = {
     urlToImage: string | null;
     publishedAt: string;
     content: string | null;
+}
+
+export type WeatherData = {
+  temperature: number;
+  condition: string;
+  location: string;
 }
