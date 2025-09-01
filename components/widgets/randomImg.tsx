@@ -31,13 +31,12 @@ export default function RandomImage() {
     return (
         <div className="flex flex-col items-center justify-center p-4">
             <h1 className="font-bold">Image</h1>
-
             <Image
                 src={image}
                 alt="Random dog"
                 width={400}
                 height={400}
-                className="rounded-2xl shadow "
+                className="h-[10rem] object-contain rounded-2xl shadow "
             />
         </div>
     )
