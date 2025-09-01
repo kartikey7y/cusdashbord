@@ -6,7 +6,7 @@ import { NewsArticle } from "@/types/index";
 import { URLS } from "@/constants/urls";
 
 
-export default function useNewsData(country: string = "US") {
+export default function useNewsData(country: string) {
     const [article, setArticle] = useState<NewsArticle | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -15,7 +15,7 @@ export default function useNewsData(country: string = "US") {
         async function fetchNews() {
             try {
                 setIsLoading(true);
-                const response = await axios.get(`${URLS.LOCALURLFORNEWS}${country}`, {
+                const response = await axios.get(`${URLS.LOCALURLFORNEWS}`, {
                     params: {
                         country: country,
                         apiKey: process.env.NEWS_API_KEY,

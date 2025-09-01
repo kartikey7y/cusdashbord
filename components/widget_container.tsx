@@ -7,7 +7,8 @@ import dynamic from 'next/dynamic';
 const WidgetComponents = {
   weather: dynamic(() => import('./widgets/weather_widget')),
   tasks: dynamic(() => import('./widgets/task_list_widget')),
-  news: dynamic(()=>import('./widgets/news_widget'))
+  news: dynamic(()=>import('./widgets/news_widget')),
+  image: dynamic(()=>import('./widgets/randomImg'))
 };
 
 export default function WidgetContainer({ widget }: { widget: Widget }) {

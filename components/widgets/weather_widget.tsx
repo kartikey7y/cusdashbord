@@ -2,6 +2,7 @@
 
 import { useWeather } from '@/hooks/useWeather';
 
+
 export default function WeatherWidget() {
   const { data, loading } = useWeather();
 
@@ -12,9 +13,11 @@ export default function WeatherWidget() {
       <h3 className="text-lg font-semibold mb-2">Weather</h3>
       {data && (
         <div>
-          <p>{data.location}</p>
-          <p>{data.temperature}°C</p>
-          <p>{data.condition}</p>
+          <p>{new Date(data.time).toLocaleString()}</p>
+          <div>
+            <p>tempture:{data.temperature}°C</p>
+            <p>wind speed:{data.windspeed}km/h</p>
+          </div>
         </div>
       )}
     </div>

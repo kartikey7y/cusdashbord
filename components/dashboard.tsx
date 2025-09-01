@@ -7,7 +7,8 @@ import WidgetContainer from './widget_container';
 const WIDGET_CONFIG: Record<WidgetType, { title: string }> = {
   weather: { title: 'Weather' },
   tasks: { title: 'Tasks' },
-  news: {title:"News"}
+  news: {title:"News"},
+  image: {title:"Image"}
 };
 
 export default function Dashboard() {

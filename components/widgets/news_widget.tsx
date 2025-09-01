@@ -3,7 +3,7 @@
 import useNewsData from '@/hooks/useNews';
 
 export default function NewsWidgets() {
-  const { article, isLoading, } = useNewsData();
+  const { article, isLoading, } = useNewsData("US");
 
   if (isLoading) return <div>Loading...</div>;
 
