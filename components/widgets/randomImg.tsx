@@ -19,7 +19,8 @@ export default function RandomImage() {
 
     return (
         <div className="flex flex-col items-center justify-center p-4">
-            <h1>Image</h1>
+                <h1 className="font-bold">Image</h1>
+              
             <Image
                 src={image}
                 alt="Random dog"

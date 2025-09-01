@@ -15,8 +15,8 @@ export default function WeatherWidget() {
         <div>
           <p>{new Date(data.time).toLocaleString()}</p>
           <div>
-            <p>tempture:{data.temperature}°C</p>
-            <p>wind speed:{data.windspeed}km/h</p>
+            <p><b>tempture:</b>{data.temperature}°C</p>
+            <p><b>wind speed:</b>{data.windspeed}km/h</p>
           </div>
         </div>
       )}
