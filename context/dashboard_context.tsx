@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useReducer } from 'react';
+import React, { createContext, useContext, useMemo, useReducer } from 'react';
 import { DashboardState, DashboardAction } from '@/types';
 
 const DashboardContext = createContext<{
@@ -22,8 +22,10 @@ function dashboardReducer(state: DashboardState, action: DashboardAction): Dashb
 export function DashboardProvider({ children }: { children: React.ReactNode }) {
     const [state, dispatch] = useReducer(dashboardReducer, { widgets: [] });
 
+    const value = useMemo(()=>({state,dispatch}),[state,dispatch])
+
     return (
-        <DashboardContext.Provider value={{ state, dispatch }}>
+        <DashboardContext.Provider value={value}>
             {children}
         </DashboardContext.Provider>
     );
